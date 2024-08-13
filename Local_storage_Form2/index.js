@@ -1,12 +1,11 @@
 let form = document.querySelector("form");
 let main = document.querySelector(".main");
-let cAll = document.querySelector("#cAll");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-    let name = e.target.name.value;
-    let email = e.target.email.value;
-    let phone = e.target.phone.value;
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
     let checkStatus = 0;
 
     let userData = JSON.parse(localStorage.getItem("userDetails")) ?? [];
@@ -55,10 +54,6 @@ let removeData = (index) => {
     uimaker();
 };
 
-cAll.addEventListener("click", () => {
-    localStorage.removeItem("userDetails");
-    uimaker();
-});
 
 document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("userDetails");

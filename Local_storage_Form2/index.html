@@ -3,10 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Storage</title>
+    <title>Local Storage Form</title>
     <style>
         * {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
       body {
         font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -16,7 +18,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: linear-gradient(to right, #6dd5ed, #2193b0);
+        background: rgb(2, 89, 93);
         min-height: 100vh;
       }
       form {
@@ -58,7 +60,7 @@
         box-shadow: 0 0 10px rgba(33, 147, 176, 0.5);
       }
       form button {
-        background: #2193b0;
+        background: #09242a;
         color: white;
         border: none;
         cursor: pointer;
@@ -66,7 +68,7 @@
         transition: background 0.3s ease-in-out;
       }
       form button:hover {
-        background: #6dd5ed;
+        background: #046f1f;
       }
       .main {
         width: 90%;
@@ -110,32 +112,18 @@
         color: #555;
         margin-bottom: 10px;
       }
-      #cAll {
-        margin-top: 20px;
-        padding: 15px 30px;
-        background: #ff4c4c;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background 0.3s ease-in-out;
-      }
-      #cAll:hover {
-        background: #ff1f1f;
-      }
     </style>
   </head>
   <body>
     <form action="">
-      <h2>Enquiry Now</h2>
+      <h2>Form</h2>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" /><br /><br />
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" /><br /><br />
       <label for="phone">Phone:</label>
       <input type="tel" id="phone" name="phone" /><br /><br />
-      <button>SAVE</button>
+      <button>SUBMIT</button>
     </form>
     <div class="main">
       <div class="items">
@@ -145,7 +133,6 @@
         <div>Phone: 1234567890</div>
       </div>
     </div>
-    <button id="cAll">Clear All</button>
     <script src="./index.js"></script>
   </body>
 </html>
