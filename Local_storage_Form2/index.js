@@ -32,17 +32,18 @@ let uimaker = () => {
     let userData = JSON.parse(localStorage.getItem("userDetails")) ?? [];
     console.log(userData);
     let finalData = "";
-    userData.forEach((elements, index) => {
+    for (let i = 0; i < userData.length; i++) {
+        let elements = userData[i];
         finalData += ` <div class="items">
-          <span onclick="removeData(${index})">&times;</span>
-          <h4>Name</h4>
-          <div>${elements.name}</div>
-          <h4>Email</h4>
-          <div>${elements.email}</div>
-          <h4>Phone</h4>
-          <div>${elements.phone}</div>
+            <span onclick="removeData(${i})">&times;</span>
+            <h4>Name</h4>
+            <div>${elements.name}</div>
+            <h4>Email</h4>
+            <div>${elements.email}</div>
+            <h4>Phone</h4>
+            <div>${elements.phone}</div>
         </div>`;
-    });
+    }
     main.innerHTML = finalData;
 };
 
