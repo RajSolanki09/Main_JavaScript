@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Determination</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form id="userData">
+        <h2>Login Form</h2>
+        <input type="text" placeholder="Enter username" id="username">
+        <input type="number" placeholder="Enter number" id="number">
+        <input type="text" placeholder="Enter email" id="email">
+        <input type="text" placeholder="Enter password" id="password">
+        <select id="fee" class="form-control">
+            <option value="" disabled selected>Select Fee</option>
+            <option value="10000">10000</option>
+            <option value="20000">20000</option>
+            <option value="30000">30000</option>
+            <option value="40000">40000</option>
+        </select>
+        <p>Please select Your Gender</p>
+        <div class="radiobtn">
+            <input type="radio" id="Male" name="gender" value="Male">
+            <label for="Male">Male</label><br>
+            <input type="radio" id="Female" name="gender" value="Female">
+            <label for="Female">Female</label><br>
+        </div>
+
+        <p>Please Select How can You Pay</p>
+        <div class="checkbox" id="checkbox">
+            <input type="checkbox" id="Online" name="Online" value="Online">
+            <label for="vehicle1"> By Online</label><br>
+            <input type="checkbox" id="Cheque" name="Cheque" value="Cheque">
+            <label for="Cheque"> By Cheque</label><br>
+            <input type="checkbox" id="Cash" name="Cash" value="Boat">
+            <label for="Cash"> By Cash</label><br><br>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>

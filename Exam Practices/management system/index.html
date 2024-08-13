@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="employeeData">
+            <h1>Hire a new Employee</h1>
+
+            <!-- employee name -->
+            <input type="text" id="name" placeholder="Employee Name" required> <br> <br>
+
+            <!-- job name -->
+            <select name="" id="job" required>
+                <option value="">Select Job Role</option>
+                <option value="HR manager">HR manager</option>
+                <option value="SDE-1">SDE-1</option>
+                <option value="SDE-2">SDE-2</option>
+            </select> <br> <br>
+
+            <!-- post name -->
+            <select name="" id="department" required>
+                <option value="">Select department</option>
+                <option value="HR">HR</option>
+                <option value="Engineering">Engineering</option>
+            </select> <br> <br>
+
+            <!-- salary -->
+            <input type="number" id="salary" placeholder="Salary" required> <br> <br>
+
+            <!-- email -->
+            <input type="email" id="email" placeholder="Email" required> <br> <br>
+
+            <!-- work exp -->
+            <input type="number" id="experience" placeholder="Pre Work Experience in Year" required> <br> <br>
+            
+            <!-- submit -->
+            <button type="submit">Hire</button>
+        </form>
+        <hr>
+
+        <!-- Count Section -->
+        <div id="countSection">
+            <p>Total Employees: <span id="employeeCount">0</span></p>
+            <p>Total Salary: $<span id="totalSalary">0</span></p>
+        </div>
+
+        <!-- Table Section -->
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Job Role</th>
+                    <th>Department</th>
+                    <th>Salary</th>
+                    <th>Contact Email</th>
+                    <th>Work Experience</th>
+                    <th>Role Type</th>
+                    <th id="deleteAll">Fire All</th>
+                </tr>
+            </thead>
+            <tbody id="employeetbody"></tbody>
+        </table>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+    <style>
+      * {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+      form {
+        width: 400px;
+        margin-bottom: 20px;
+        padding: 20px;
+        box-shadow: 0px 0px 10px 2px #ccc;
+        background-color: #fff;
+      }
+      form label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      form h2 {
+        padding: 20px 0px;
+        text-align: center;
+      }
+      form button {
+        padding: 10px 25px;
+        background-color: #051c40;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s;
+        width: 100%;
+      }
+      form button:hover {
+        background-color: #70c774;
+      }
+      #name,
+      #email,
+      #phone {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        display: block;
+      }
+      .main {
+        width: 1320px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+      .items {
+        flex-basis: 20%;
+        margin: 1%;
+        box-shadow: 0px 0px 10px 2px #ccc;
+        padding: 1%;
+        position: relative;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+      .items span {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 20px;
+        color: red;
+        cursor: pointer;
+        transition: color 0.3s;
+      }
+      .items span:hover {
+        color: darkred;
+      }
+      .items h4 {
+        margin-bottom: 5px;
+        font-size: 18px;
+      }
+      .items div {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+      #cAll {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #ff4c4c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      #cAll:hover {
+        background-color: #ff1f1f;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h2>Enquiry Now</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" /><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><br /><br />
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" /><br /><br />
+      <button>SAVE</button>
+    </form>
+    <div class="main">
+      <div class="items">
+        <span>X</span>
+        <h4>John Doe</h4>
+        <div>Email: john@example.com</div>
+        <div>Phone: 1234567890</div>
+      </div>
+    </div>
+    <button id="cAll">Clear All</button>
+    <script src="./index.js"></script>
+  </body>
+</html>
