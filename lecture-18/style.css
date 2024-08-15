@@ -1,0 +1,32 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.clock {
+  background-color: #333333;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  text-align: center;
+}
+
+#time {
+  font-size: 6rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+#date {
+  font-size: 2rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+}
