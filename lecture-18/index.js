@@ -25,5 +25,5 @@ setInterval(function () {
     let year = now.getFullYear();
 
     document.getElementById('time').innerHTML = `${hours} : ${minutes} : ${seconds} , ${ampm}`;
-    document.getElementById('date').innerHTML = `${day} : ${month} : ${date} : ${year}`;
+    document.getElementById('date').innerHTML = `${day} : ${date},${month} : ${year}`;
 }, 1000);
