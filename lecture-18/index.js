@@ -1,9 +1,17 @@
 setInterval(() => {
-    let now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
     let ampm;
+
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    let day = days[date.getDay()];
+    let month = months[date.getMonth()];
+    let dates = date.getDate();
+    let year = date.getFullYear();
 
     if (hours >= 12) {
         ampm = 'PM';
@@ -17,13 +25,6 @@ setInterval(() => {
         hours = 12;
     }
 
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let day = days[now.getDay()];
-    let month = months[now.getMonth()];
-    let date = now.getDate();
-    let year = now.getFullYear();
-
     document.getElementById('time').innerHTML = `${hours} : ${minutes} : ${seconds} , ${ampm}`;
-    document.getElementById('date').innerHTML = `${day} : ${date},${month} : ${year}`;
+    document.getElementById('date').innerHTML = `${day} , ${dates},${month} , ${year}`;
 }, 1000);
