@@ -12,7 +12,7 @@ setTimeout(() => {
 }, 500);
 
 // Twitter
-let twitter = 0;
+let twitter = 0; 
 const maxCount2 = document.getElementById('twitter').innerHTML;
 setTimeout(() => {
     const id2 = setInterval(() => {
