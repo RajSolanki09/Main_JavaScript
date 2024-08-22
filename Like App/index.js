@@ -5,11 +5,12 @@ let commentCount = Number(sessionStorage.getItem('comment-count')) || 0;
 let bookmarkCount = Number(sessionStorage.getItem('bookmark-count')) || 0;
 
 const uiMaker = () => {
-    document.getElementById('likes-count').textContent = likeCount;
-    document.getElementById('comment-count').textContent = commentCount;
-    document.getElementById('share-count').textContent = shareCount;
-    document.getElementById('bookmark-count').textContent = bookmarkCount;
+    document.getElementById('likes-count').innerHTML = likeCount;
+    document.getElementById('comment-count').innerHTML = commentCount;
+    document.getElementById('share-count').innerHTML = shareCount;
+    document.getElementById('bookmark-count').innerHTML = bookmarkCount;
 };
+
 
 uiMaker();
 
