@@ -3,7 +3,7 @@ class Employee {
     #salary
     constructor(id, name, salary) {
       this.id = id;
-      this.#name = name;
+      this.#name = name;  
       this.#salary = salary;
     }
   
