@@ -2,6 +2,7 @@ let signUpData = JSON.parse(localStorage.getItem('signUp')) || [];
 let newsData = JSON.parse(localStorage.getItem('newsData')) || [];
 
 const displaySignUp = (signUpData) => {
+
     const userDataDiv = document.getElementById('userData');
     userDataDiv.innerHTML = "";
 
@@ -20,6 +21,7 @@ const displaySignUp = (signUpData) => {
 };
 
 const displayNews = (newsData) => {
+
     const newsDataDiv = document.getElementById('newsData');
     newsDataDiv.innerHTML = "";
 

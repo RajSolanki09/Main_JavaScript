@@ -12,9 +12,6 @@ const addNews = (e) => {
     newsData.push(newsDetails);
     localStorage.setItem('newsData', JSON.stringify(newsData));
 
-    // Optionally, you can reload the
-    // Optionally, refresh the home page manually if desired.
-    // location.href = './home.html';  // This is commented out as per your preference.
 };
 
 document.getElementById('addNewsForm').addEventListener('submit', addNews);
