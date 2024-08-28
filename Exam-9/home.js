@@ -1,7 +1,9 @@
-// Function to display user data
+let signUpData = JSON.parse(localStorage.getItem('signUp')) || [];
+let newsData = JSON.parse(localStorage.getItem('newsData')) || [];
+
 const displaySignUp = (signUpData) => {
     const userDataDiv = document.getElementById('userData');
-    userDataDiv.innerHTML = ""; // Clear existing content
+    userDataDiv.innerHTML = "";
 
     signUpData.forEach((user) => {
         let img = document.createElement("img");
@@ -17,32 +19,34 @@ const displaySignUp = (signUpData) => {
     });
 };
 
-// Function to display news data
 const displayNews = (newsData) => {
     const newsDataDiv = document.getElementById('newsData');
-    newsDataDiv.innerHTML = ""; // Clear existing content
+    newsDataDiv.innerHTML = "";
 
-    newsData.forEach((news) => {
+    newsData.map((ele, index) => {
         let title = document.createElement("h3");
-        title.textContent = news.title;
+        title.textContent = ele.title;
 
         let img = document.createElement("img");
-        img.src = news.image;
+        img.src = ele.image;
 
         let description = document.createElement("p");
-        description.textContent = news.description;
+        description.textContent = ele.description;
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.onclick = () => {
+            newsData.splice(index, 1);
+            localStorage.setItem('newsData', JSON.stringify(newsData));
+            displayNews(newsData);
+        };
 
         let div = document.createElement("div");
-        div.append(title, img, description);
+        div.append(title, img, description, deleteBtn);
 
         newsDataDiv.append(div);
     });
 };
 
-// Initial display when home page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const signUpData = JSON.parse(localStorage.getItem('signUp')) || [];
-    const newsData = JSON.parse(localStorage.getItem('newsData')) || [];
-    displaySignUp(signUpData);
-    displayNews(newsData);
-});
+displaySignUp(signUpData);
+displayNews(newsData);
