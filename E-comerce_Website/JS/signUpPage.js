@@ -1,8 +1,6 @@
-
 let handleData = (e) => {
     e.preventDefault();
 
 
 }
-
-document.querySelector("#username").addEventListener("submit", handleData);
+document.querySelector("#userdata").addEventListener("submit", handleData);
