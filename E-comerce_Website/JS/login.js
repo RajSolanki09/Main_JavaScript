@@ -10,7 +10,6 @@ let handleData = (e) => {
         password: getvalue(".password")
     };
 
-
     let isMatches = users.filter((ele) =>
         ele.email === user.email && ele.password === user.password
     );

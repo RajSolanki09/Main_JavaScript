@@ -14,7 +14,7 @@ let handleData = (e) => {
     }
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
-    // window.location.href = "/E-comerce_Website/index.html"
+    window.location.href = "/E-comerce_Website/index.html"
 
 }
 document.querySelector("#userData").addEventListener("submit", handleData);
