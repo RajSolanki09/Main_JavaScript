@@ -1,10 +1,11 @@
 /* common nav css */
-/* General Navbar Styles */
 .navbar {
   background: linear-gradient(45deg, #8a2387, #e94057, #f27121);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 80%;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .navbar-nav {
@@ -34,15 +35,13 @@
   transform: scale(1.1);
   background-color: rgba(255, 255, 255, 0.2);
 }
-/* Active Link Styles */
 .nav-link.active {
   background-color: #ffd700;
   color: #4b0082;
-  border: 2px solid #4b0082; /* Indigo border for active link */
-  transform: scale(1.1); /* Maintain zoom on active */
+  border: 2px solid #4b0082; 
+  transform: scale(1.1); 
 }
 
-/* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar-nav {
     flex-direction: column;
