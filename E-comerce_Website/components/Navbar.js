@@ -1,11 +1,9 @@
 const Navbar = () => {
-    return ` <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  return `
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container w-50 ps-5 d-flex">
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="/E-comerce_Website/Pages/homePage.html">Home</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="/E-comerce_Website/Pages/productPage.html">Product</a>
             </li>
