@@ -1,7 +1,8 @@
+// Navbar Component
 const Navbar = () => {
   let isLogin = localStorage.getItem('isLogin') || false;
   let username = localStorage.getItem('username');
-  
+
   return `
   <nav class="navbar navbar-expand-lg navbar-light my-3" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <div class="container">
@@ -25,7 +26,7 @@ const Navbar = () => {
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-3">
-            <a class="nav-link text-danger px-3 fw-bolder " href="/E-comerce_Website/Pages/loginPage.html">
+            <a id="auth-link" class="nav-link text-danger px-3 fw-bolder" href="#">
               ${isLogin ? "Logout" : "Login"}
             </a>
           </li>
@@ -40,5 +41,22 @@ const Navbar = () => {
   </nav>
   `;
 };
+
+// Render Navbar and attach the event listener
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Handle logout functionality
+  if (localStorage.getItem('isLogin')) {
+    document.getElementById("auth-link").addEventListener("click", () => {
+      localStorage.removeItem('isLogin');
+      localStorage.removeItem('username');
+      window.location.href = "/E-comerce_Website/Pages/loginPage.html";
+    });
+  } else {
+    document.getElementById("auth-link").addEventListener("click", () => {
+      window.location.href = "/E-comerce_Website/Pages/loginPage.html";
+    });
+  }
+});
 
 export default Navbar;

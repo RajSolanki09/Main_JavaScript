@@ -20,7 +20,7 @@ let handleData = (e) => {
         alert("Login successful");
         window.location.href = "/E-comerce_Website/index.html";
         localStorage.setItem("username", isMatches[0].username)
-        localStorage.setItem("isLogin", true)
+        localStorage.setItem("isLogin", true);
     } else {
         alert("Invalid email or password");
     }
