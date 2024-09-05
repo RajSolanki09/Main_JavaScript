@@ -24,6 +24,19 @@ const Navbar = () => {
             <a class="nav-link text-danger px-3 fw-bolder" href="/E-comerce_Website/Pages/cartPage.html">Cart</a>
           </li>
         </ul>
+        <form class="d-flex " role="search" id="searching">
+              <input
+                class="form-control me-2 border border-danger"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="search"
+              />
+              <button class="bg-white text-danger px-3 fw-bolder border border-danger" type="submit">
+                Search
+              </button>
+              </form>
+              <div ></div>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-3">
             <a id="auth-link" class="nav-link text-danger px-3 fw-bolder" href="#">
@@ -36,6 +49,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
+        
       </div>
     </div>
   </nav>
