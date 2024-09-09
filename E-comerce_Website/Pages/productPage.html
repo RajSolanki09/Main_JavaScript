@@ -22,10 +22,8 @@
         flex-wrap: wrap;
         gap: 3rem;
         justify-content: center;
-
       }
       .product div{
-        /* border: 2px solid rgb(218, 77, 25); */
         box-shadow: 0px 0px 10px 0px rgb(218, 77, 25);
         max-width: auto;
         max-height: auto;
@@ -48,6 +46,17 @@
         padding-left: 20px;
         font-weight: 600;
       }
+      .product button{
+        padding: 10px 25px;
+        background-color: rgb(218, 77, 25);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 20px;
+
+        margin-top: 10px;
+      }
     </style>
   </head>
   <body>
@@ -62,12 +71,10 @@
         <button id="men" class="btn btn-outline-danger mx-2">Men</button>
         <button id="women" class="btn btn-outline-danger mx-2">Women</button>
         <button id="kids" class="btn btn-outline-danger mx-2">kids</button>
-        <button id="electronics" class="btn btn-outline-danger mx-2">Electronics</button>
       </div>
        <h1 class="pb-3 text-center" style="color:rgb(218, 77, 25)">Products</h2>
       </div>
       <div id="productList" class="product container-fluid"></div>
-
   </div>
   </body>
   <script type="module" src="/E-comerce_Website/JS/product.js"></script>

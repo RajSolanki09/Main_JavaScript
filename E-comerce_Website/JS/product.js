@@ -13,7 +13,9 @@ const mapper = (data) => {
         let h2 = createTag("h2", ele.title)
         let category = createTag("p", ele.category)
         let div = document.createElement("div")
-        div.append(img, h2, price, category)
+        let button = document.createElement("button",ele.button)
+        button.textContent = "Buy"
+        div.append(img, h2, price, category,button)
         document.getElementById("productList").append(div)
     })
 }
@@ -24,11 +26,9 @@ mapper(products)
 const handleSort = (orderBy) => {
     if (orderBy == "lth") {
         let temp = products.sort((a, b) => a.price - b.price);
-
         mapper(temp);
     } else {
         let temp = products.sort((a, b) => b.price - a.price);
-
         mapper(temp);
     }
 };
@@ -53,9 +53,7 @@ document
     document
     .getElementById("kids")
     .addEventListener("click", () => handleCategory("kids"));
-document
-    .getElementById("electronics")
-    .addEventListener("click", () => handleCategory("electronics"));
+
 
 // searching
 
