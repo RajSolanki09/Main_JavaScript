@@ -5,6 +5,37 @@ document.getElementById("navbar").innerHTML = Navbar();
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
+// cart 
+
+let cart = []
+
+const isExist = (id) => {
+    const product = cart.filter((ele) => ele.id == id)
+    if (product.length > 0) {
+        alert("Product already exists");
+        return true;
+
+    }
+    else {
+        return false;
+    }
+
+}
+
+
+
+const handleCart = (ele) => {
+   if(isExist(ele.id)){
+
+   }
+   else{
+    cart.push(ele);
+    alert("added cart")
+   }
+console.log(cart);
+
+}
+
 const mapper = (data) => {
     document.getElementById("productList").innerHTML = "";
     data.map((ele) => {
@@ -13,9 +44,9 @@ const mapper = (data) => {
         let h2 = createTag("h2", ele.title)
         let category = createTag("p", ele.category)
         let div = document.createElement("div")
-        let button = document.createElement("button",ele.button)
-        button.textContent = "Buy"
-        div.append(img, h2, price, category,button)
+        let buyBtn = createTag("button", "Add to Cart");
+        buyBtn.addEventListener("click", () => handleCart(ele))
+        div.append(img, h2, price, category,buyBtn)
         document.getElementById("productList").append(div)
     })
 }

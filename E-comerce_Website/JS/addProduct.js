@@ -20,6 +20,7 @@ const productSubmit = (e) => {
         price: getvalue(".price"),
         category: getvalue(".category"),
         img: getvalue(".img"),
+        productid:Date.now()
     };
     products.push(product);
     localStorage.setItem("products", JSON.stringify(products));
