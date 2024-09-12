@@ -5,55 +5,44 @@ document.getElementById("navbar").innerHTML = Navbar();
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
-// cart 
-
-let cart = []
+let cart = [];
 
 const isExist = (id) => {
     let flag = false;
     cart.map((ele, i) => {
-
         if (ele.id == id) {
-            cart[i].qty = cart[i].qty + 1
+            cart[i].qty = cart[i].qty + 1;  
             flag = true;
-            alert("qty added")
+            alert("Quantity increased");
         }
-    })
+    });
     return flag;
-
 }
 
-
-
 const handleCart = (ele) => {
-   if(isExist(ele.id)){
-
+   if (!isExist(ele.id)) {
+       ele.qty = 1;  
+       cart.push(ele); 
+       alert("Added to cart");
    }
-   else{
-    cart.push(ele);
-    alert("added cart")
-   }
-console.log(cart);
-
+   console.log(cart);
 }
 
 const mapper = (data) => {
     document.getElementById("productList").innerHTML = "";
     data.map((ele) => {
-        let img = createTag("img", ele.img)
-        let price = createTag("p", ele.price)
-        let h2 = createTag("h2", ele.title)
-        let category = createTag("p", ele.category)
-        let div = document.createElement("div")
+        let img = createTag("img", ele.img);
+        let price = createTag("p", ele.price);
+        let h2 = createTag("h2", ele.title);
+        let category = createTag("p", ele.category);
+        let div = document.createElement("div");
         let buyBtn = createTag("button", "Add to Cart");
-        buyBtn.addEventListener("click", () => handleCart(ele))
-        div.append(img, h2, price, category,buyBtn)
-        document.getElementById("productList").append(div)
-    })
+        buyBtn.addEventListener("click", () => handleCart(ele));
+        div.append(img, h2, price, category, buyBtn);
+        document.getElementById("productList").append(div);
+    });
 }
-mapper(products)
-
-// sorting & filtering
+mapper(products);
 
 const handleSort = (orderBy) => {
     if (orderBy == "lth") {
@@ -69,33 +58,18 @@ const handleCategory = (category) => {
     let temp = products.filter((ele) => ele.category == category);
     mapper(temp);
 };
-document
-    .getElementById("lth")
-    .addEventListener("click", () => handleSort("lth"));
-document
-    .getElementById("htl")
-    .addEventListener("click", () => handleSort("htl"));
 
-document
-    .getElementById("men")
-    .addEventListener("click", () => handleCategory("men"));
-document
-    .getElementById("women")
-    .addEventListener("click", () => handleCategory("women"));
-    document
-    .getElementById("kids")
-    .addEventListener("click", () => handleCategory("kids"));
+document.getElementById("lth").addEventListener("click", () => handleSort("lth"));
+document.getElementById("htl").addEventListener("click", () => handleSort("htl"));
 
-
-// searching
+document.getElementById("men").addEventListener("click", () => handleCategory("men"));
+document.getElementById("women").addEventListener("click", () => handleCategory("women"));
+document.getElementById("kids").addEventListener("click", () => handleCategory("kids"));
 
 const search = (e) => {
     e.preventDefault();
-
     let searchValue = getValue("#search");
-
     let temp = products.filter((ele) => ele.title.toLowerCase().includes(searchValue.toLowerCase()));
     mapper(temp);
-
 };
 document.getElementById("searching").addEventListener("submit", search);
