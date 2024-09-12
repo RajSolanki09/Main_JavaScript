@@ -10,15 +10,16 @@ let products = JSON.parse(localStorage.getItem("products")) || [];
 let cart = []
 
 const isExist = (id) => {
-    const product = cart.filter((ele) => ele.id == id)
-    if (product.length > 0) {
-        alert("Product already exists");
-        return true;
+    let flag = false;
+    cart.map((ele, i) => {
 
-    }
-    else {
-        return false;
-    }
+        if (ele.id == id) {
+            cart[i].qty = cart[i].qty + 1
+            flag = true;
+            alert("qty added")
+        }
+    })
+    return flag;
 
 }
 

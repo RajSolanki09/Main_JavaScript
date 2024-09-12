@@ -1,6 +1,6 @@
 // Navbar Component
 const Navbar = () => {
-  let isLogin = localStorage.getItem('isLogin') || false ;
+  let isLogin = localStorage.getItem('isLogin') || false;
   let username = localStorage.getItem('username');
 
   return `
