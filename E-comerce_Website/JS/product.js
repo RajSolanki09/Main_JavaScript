@@ -1,4 +1,4 @@
-import { createTag } from "../components/helper.js";
+import getValue, { createTag } from "../components/helper.js";
 import Navbar from "../components/Navbar.js";
 
 document.getElementById("navbar").innerHTML = Navbar();
@@ -11,7 +11,7 @@ const isExist = (id) => {
     let flag = false;
     cart.map((ele, i) => {
         if (ele.id == id) {
-            cart[i].qty = cart[i].qty + 1;  
+            cart[i].qty = cart[i].qty + 1;
             flag = true;
             alert("Quantity increased");
         }
@@ -20,12 +20,14 @@ const isExist = (id) => {
 }
 
 const handleCart = (ele) => {
-   if (!isExist(ele.id)) {
-       ele.qty = 1;  
-       cart.push(ele); 
-       alert("Added to cart");
-   }
-   console.log(cart);
+    if (!isExist(ele.id)) {
+        cart.push({ ...ele, qty: 1 });
+        alert("added to cart");
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    console.log(cart);
 }
 
 const mapper = (data) => {
@@ -73,3 +75,8 @@ const search = (e) => {
     mapper(temp);
 };
 document.getElementById("searching").addEventListener("submit", search);
+document.getElementById("search").addEventListener("keypress", (e) => {
+    if(e.key=="Enter"){
+        
+    }
+    });

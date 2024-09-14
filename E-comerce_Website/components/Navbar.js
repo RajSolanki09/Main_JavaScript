@@ -49,7 +49,6 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        
       </div>
     </div>
   </nav>
@@ -58,7 +57,7 @@ const Navbar = () => {
 
 // Render Navbar and attach the event listener
 document.addEventListener("DOMContentLoaded", () => {
-
+  
   // Handle logout functionality
   if (localStorage.getItem('isLogin')) {
     document.getElementById("auth-link").addEventListener("click", () => {
