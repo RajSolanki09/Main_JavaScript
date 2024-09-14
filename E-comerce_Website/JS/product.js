@@ -1,38 +1,32 @@
-import getValue, { createTag } from "../components/helper.js";
+import getvalue, { createTag } from "../components/helper.js";
 import Navbar from "../components/Navbar.js";
 
 document.getElementById("navbar").innerHTML = Navbar();
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const isExist = (id) => {
-    let flag = false;
-    cart.map((ele, i) => {
-        if (ele.id == id) {
-            cart[i].qty = cart[i].qty + 1;
-            flag = true;
-            alert("Quantity increased");
-        }
-    });
-    return flag;
-}
+    return cart.findIndex(item => item.id === id);
+};
 
 const handleCart = (ele) => {
-    if (!isExist(ele.id)) {
+    const index = isExist(ele.id);
+    if (index !== -1) {
+        cart[index].qty += 1;
+        alert("Quantity increased");
+    } else {
         cart.push({ ...ele, qty: 1 });
-        alert("added to cart");
+        alert("Added to cart");
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-
     console.log(cart);
-}
+};
 
 const mapper = (data) => {
     document.getElementById("productList").innerHTML = "";
-    data.map((ele) => {
+    data.forEach((ele) => {
         let img = createTag("img", ele.img);
         let price = createTag("p", ele.price);
         let h2 = createTag("h2", ele.title);
@@ -43,22 +37,18 @@ const mapper = (data) => {
         div.append(img, h2, price, category, buyBtn);
         document.getElementById("productList").append(div);
     });
-}
+};
+
 mapper(products);
 
 const handleSort = (orderBy) => {
-    if (orderBy == "lth") {
-        let temp = products.sort((a, b) => a.price - b.price);
-        mapper(temp);
-    } else {
-        let temp = products.sort((a, b) => b.price - a.price);
-        mapper(temp);
-    }
+    let sortedProducts = [...products].sort((a, b) => orderBy === "lth" ? a.price - b.price : b.price - a.price);
+    mapper(sortedProducts);
 };
 
 const handleCategory = (category) => {
-    let temp = products.filter((ele) => ele.category == category);
-    mapper(temp);
+    let filteredProducts = products.filter((ele) => ele.category === category);
+    mapper(filteredProducts);
 };
 
 document.getElementById("lth").addEventListener("click", () => handleSort("lth"));
@@ -70,13 +60,8 @@ document.getElementById("kids").addEventListener("click", () => handleCategory("
 
 const search = (e) => {
     e.preventDefault();
-    let searchValue = getValue("#search");
-    let temp = products.filter((ele) => ele.title.toLowerCase().includes(searchValue.toLowerCase()));
-    mapper(temp);
+    let searchValue = getvalue("#search");
+    let filteredProducts = products.filter((ele) => ele.title.toLowerCase().includes(searchValue.toLowerCase()));
+    mapper(filteredProducts);
 };
 document.getElementById("searching").addEventListener("submit", search);
-document.getElementById("search").addEventListener("keypress", (e) => {
-    if(e.key=="Enter"){
-        
-    }
-    });
