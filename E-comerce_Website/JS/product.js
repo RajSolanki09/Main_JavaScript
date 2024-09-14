@@ -5,7 +5,7 @@ document.getElementById("navbar").innerHTML = Navbar();
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
-let cart = JSON.parse(localStorage.getItem("cart")) || []
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const isExist = (id) => {
     let flag = false;
