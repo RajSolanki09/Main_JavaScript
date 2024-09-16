@@ -7,7 +7,7 @@ const Navbar = () => {
   <nav class="navbar navbar-expand-lg navbar-light my-3" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="https://1000logos.net/wp-content/uploads/2021/02/Shopee-logo.png" alt="Logo" height="50">
+        <img src="https://www.zarla.com/images/zarla-shop-stock-1x1-2400x2400-20220124-xq4kmxrq9xqmxpw7dfbq.png?crop=1:1,smart&width=250&dpr=2" alt="Logo" height="50">
       </a>
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav mr-auto">

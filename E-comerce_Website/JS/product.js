@@ -25,7 +25,7 @@ const handleCart = (ele) => {
 };
 
 const mapper = (data) => {
-    document.getElementById("productList").innerHTML = "";
+    document.getElementById("productList").innerHTML = ""; 
     data.forEach((ele) => {
         let img = createTag("img", ele.img);
         let price = createTag("p", ele.price);
