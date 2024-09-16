@@ -7,21 +7,24 @@ let products = JSON.parse(localStorage.getItem("products")) || [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const isExist = (id) => {
-    return cart.findIndex(item => item.id === id);
+  console.log("id: ", id);
+
+  return cart.findIndex((item) => item.productid === id);
 };
 
 const handleCart = (ele) => {
-    const index = isExist(ele.id);
-    if (index !== -1) {
-        cart[index].qty += 1;
-        alert("Quantity increased");
-    } else {
-        cart.push({ ...ele, qty: 1 });
-        alert("Added to cart");
-    }
+  const index = isExist(ele.productid);
+  console.log("index: ", index);
+  if (index !== -1) {
+    cart[index].qty += 1;
+    alert("Quantity increased");
+  } else {
+    cart.push({ ...ele, qty: 1 });
+    alert("Added to cart");
+  }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
-    console.log(cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log(cart);
 };
 
 const mapper = (data) => {
