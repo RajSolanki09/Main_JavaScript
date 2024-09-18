@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/E-comerce_Website/style/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+ 
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="navbar"></div>
+
+    <div class="cart-container">
+      <!-- Cart Table -->
+      <div class="col-lg-7">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Title</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Total Price</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody id="cartItem"></tbody>
+        </table>
+      </div>
+
+      <!-- Total Amount Table -->
+      <div class="col-lg-4">
+        <div class="total-table">
+          <h4>Total Summary</h4>
+          <div class="amount-details">
+            <span>Subtotal:</span>
+            <span id="subtotalAmount" >$0.00</span>
+          </div>
+          <div class="amount-details">
+            <span>Shipping:</span>
+            <span id="shippingAmount">$5.00</span>
+          </div>
+          <div class="amount-details">
+            <span>Discount:</span>
+            <span id="discountAmount">-$0.00</span>
+          </div>
+          <hr>
+          <div class="amount-details" >
+          <center>
+              <h4 id="totalAmount" class="ps-5">$0.00</h4>
+            </center>
+          </div>
+          <center>
+            <button class="btn btn-outline-primary">Apply Discount Code</button>
+            <button class="btn btn-outline-secondary">Calculate Shipping</button>
+          </center>
+          <div class="checkout-section">
+            <button id="checkoutBtn" class="btn btn-danger "><i class="fa-solid fa-right-from-bracket p-2"></i>Checkout</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="/E-comerce_Website/JS/cart.js"></script>
+</body>
+
+</html>
