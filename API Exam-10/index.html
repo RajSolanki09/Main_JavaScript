@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Exam</title>
+    <style>
+       body {
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 300px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchBtn">Search</button><br>
+        <button id="beauty">Beauty</button>
+        <button id="fragrances">Fragrances</button>
+        <button id="furniture">Furniture</button>
+    </div>
+    <button id="lth">LTH</button>
+    <button id="htl">HTL</button>
+    <h1>Available Products Data</h1>
+    <div id="productsList"></div>
+</body>
+<script src="./index.js"></script>
+
+</html>
