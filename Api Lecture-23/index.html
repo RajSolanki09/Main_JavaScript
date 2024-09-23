@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+    
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+        }
+    
+        .user-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px 50px;
+            transition: transform 0.3s ease-in-out;
+            margin: 20px;
+            border-left: 5px solid #52025c;
+        }
+    
+        .user-card:hover {  
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(169, 113, 113, 0.2);
+        }
+    
+        .user-card h2 {
+            color: #52025c; 
+            margin-bottom: 10px;
+        }
+    
+        .user-card p {
+            color: #555;
+            margin-bottom: 8px;
+        }
+    
+        .user-card p strong {
+            color: #222;
+        }
+    
+        .user-card:nth-child(odd) {
+            background-color: #f9f9f9; 
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>User Information</h1>
+    <div id="productsList"></div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
