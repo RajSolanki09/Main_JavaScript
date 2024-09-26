@@ -6,7 +6,7 @@ const getWeather = async (cityName) => {
 };
 
 const handleLocation = async (lat, lon) => { // Added lat and lon parameters
-    let req = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b4c426c91009e3429c4af53c61fd6e9c&units=metric`); // Added units=metric
+    let req = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b4c426c91009e3429c4af53c61fd6e9c&units=metric`); 
     let res = await req.json();
     console.log(res);
     ui(res);
@@ -17,10 +17,10 @@ const getLocation = () => {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
         console.log(position);
-        handleLocation(lat, lon); // Pass lat and lon to handleLocation
+        handleLocation(lat, lon); 
 
     }, (error) => {
-        console.error("Error getting location: ", error); // Added error handling
+        console.error("Error getting location: ", error);
     });
 }
 
@@ -31,7 +31,6 @@ const ui = (data) => {
     let humidity = data.main.humidity;
     let windSpeed = data.wind.speed;
 
-    // Update the inner HTML correctly
     document.getElementById("box").innerHTML = `
         <div class="weather-icon">🌤️</div>
         <div id="temperature" class="temperature">Temperature: ${Math.round(temperature)}°C</div>
@@ -55,5 +54,4 @@ const handleSubmit = (e) => {
 
 document.getElementById("form").addEventListener("submit", handleSubmit);
 
-// Automatically get location on page load
 getLocation();
