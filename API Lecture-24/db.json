@@ -1,0 +1,22 @@
+{
+  "student": [
+    {
+      "id": "151d",
+      "name": "",
+      "email": "",
+      "number": "",
+      "course": "Full Stack",
+      "dob": "",
+      "address": ""
+    },
+    {
+      "id": "bdd6",
+      "name": "",
+      "email": "",
+      "number": "",
+      "course": "Full Stack",
+      "dob": "",
+      "address": ""
+    }
+  ]
+}
