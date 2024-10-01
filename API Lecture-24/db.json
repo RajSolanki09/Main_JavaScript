@@ -1,0 +1,20 @@
+{
+  "student": [
+    {
+      "id": "05ed",
+      "name": "Raj Solanki",
+      "email": "sdfgh",
+      "number": "1234567890",
+      "course": "Frontend",
+      "address": "A-9"
+    },
+    {
+      "id": "3933",
+      "name": "node",
+      "email": "S@gmail.com",
+      "number": "52",
+      "course": "Backend",
+      "address": "56"
+    }
+  ]
+}
