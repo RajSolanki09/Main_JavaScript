@@ -1,0 +1,13 @@
+{
+  "Question": [
+    {
+      "id": "cb53",
+      "Que": "What is the capital of France?",
+      "Op1": "Berlin",
+      "Op2": "Madrid",
+      "Op3": "Paris",
+      "Op4": "Rome",
+      "Ans": "Paris"
+    }
+  ]
+}
