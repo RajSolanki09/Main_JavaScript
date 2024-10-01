@@ -15,7 +15,7 @@ const uiMaker = async () => {
         op1.innerHTML = `Option: A : ${ele.Op1}`;
 
         let op2 = document.createElement('p');
-        op2.innerHTML = `Option: B : ${ele.Op2}`;
+        op2.innerHTML =` Option: B : ${ele.Op2}`;
 
         let op3 = document.createElement('p');
         op3.innerHTML = `Option: C : ${ele.Op3}`;
@@ -23,23 +23,18 @@ const uiMaker = async () => {
         let op4 = document.createElement('p');
         op4.innerHTML = `Option: D : ${ele.Op4}`;
 
-        op1.addEventListener('click', () => handleOptionClick(op1, ele.Ans));
-        op2.addEventListener('click', () => handleOptionClick(op2, ele.Ans));
-        op3.addEventListener('click', () => handleOptionClick(op3, ele.Ans));
-        op4.addEventListener('click', () => handleOptionClick(op4, ele.Ans));
-
         div.append(Que, op1, op2, op3, op4);
-        
         document.getElementById("list").append(div);
-    });
-};
 
-const handleOptionClick = (selected, rightAns) => {
-    if (selected.innerHTML.includes(rightAns)) {
-        selected.style.backgroundColor = 'green'; 
-    } else {
-        selected.style.backgroundColor = 'red'; 
-    }
+        
+        const Ans = ele.Ans; 
+
+        if (Ans === ele.Op1 || Ans === ele.Op2 || Ans === ele.Op3 || Ans === ele.Op4) {
+            div.classList.add('green'); 
+        } else {
+            div.classList.add('red'); 
+        }
+    });
 };
 
 uiMaker();
