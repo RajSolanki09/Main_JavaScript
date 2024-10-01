@@ -2,7 +2,6 @@ import studentAPI from "./API.js";
 
 let id = -1;
 
-// Handle form submission
 const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -15,20 +14,19 @@ const handleSubmit = async (e) => {
     };
 
     if (id === -1) {
-        await studentAPI.post(student); // Add new student
+        await studentAPI.post(student); 
     } else {
-        await studentAPI.patch(id, student); // Update existing student
-        id = -1; // Reset ID after update
-        document.getElementById('type').textContent = 'Submit'; // Reset button text
+        await studentAPI.patch(id, student);
+        id = -1; 
+        document.getElementById('type').textContent = 'Submit';
     }
 
-    getStudent(); // Refresh student list
+    window.location.reload(); 
 };
 
-// Create UI elements for each student
 const uimaker = (students) => {
     const listElement = document.getElementById('list');
-    listElement.innerHTML = ''; // Clear previous entries
+    listElement.innerHTML = ''; 
 
     students.map((ele) => {
         const div = document.createElement('div');
@@ -47,7 +45,7 @@ const uimaker = (students) => {
         course.innerHTML = `Course: ${ele.course}`;
 
         const address = document.createElement('p');
-        address.innerHTML = `Address: ${ele.address}`; // Added address field
+        address.innerHTML = `Address: ${ele.address}`; 
 
         const btn = document.createElement('button');
         btn.innerHTML = "Delete";
@@ -59,10 +57,10 @@ const uimaker = (students) => {
 
         btn.addEventListener('click', async () => {
             await studentAPI.delete(ele.id);
-            getStudent(); // Refresh the student list after deletion
+            window.location.reload(); 
         });
 
-        div.append(name, email, number, course, address, btn, btn2); // Append address and buttons
+        div.append(name, email, number, course, address, btn, btn2); 
         listElement.append(div);
     });
 };
@@ -73,18 +71,15 @@ const handleUpdate = (ele) => {
     document.getElementById('number').value = ele.number;
     document.getElementById('course').value = ele.course;
     document.getElementById('address').value = ele.address;
-    document.getElementById('type').textContent = 'Update'; // Change button text
+    document.getElementById('type').textContent = 'Update'; 
     id = ele.id;
 };
 
-// Fetch students from the API and display them
 const getStudent = async () => {
     const students = await studentAPI.get();
     uimaker(students);
 };
 
-// Initial fetch to display students
 getStudent();
 
-// Attach event listener to form submission
 document.getElementById('form').addEventListener('submit', handleSubmit);
