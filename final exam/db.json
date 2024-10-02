@@ -1,0 +1,49 @@
+{
+  "Question": [
+    {
+      "id": "q001",
+      "Que": "Which method is used to remove the last element from an array in JavaScript?",
+      "Op1": "pop()",
+      "Op2": "shift()",
+      "Op3": "push()",
+      "Op4": "unshift()",
+      "Ans": "pop()"
+    },
+    {
+      "id": "q002",
+      "Que": "How do you write an 'if' statement in JavaScript to check if 'x' is equal to 5?",
+      "Op1": "if x = 5",
+      "Op2": "if (x == 5)",
+      "Op3": "if (x === 5)",
+      "Op4": "if x == 5 then",
+      "Ans": "if (x == 5)"
+    },
+    {
+      "id": "q003",
+      "Que": "Which of the following is a JavaScript data type?",
+      "Op1": "float",
+      "Op2": "char",
+      "Op3": "boolean",
+      "Op4": "double",
+      "Ans": "boolean"
+    },
+    {
+      "id": "q004",
+      "Que": "What keyword is used to declare a variable in JavaScript?",
+      "Op1": "var",
+      "Op2": "int",
+      "Op3": "const",
+      "Op4": "let",
+      "Ans": "var"
+    },
+    {
+      "id": "q005",
+      "Que": "Which JavaScript method can be used to select an element by its ID?",
+      "Op1": "getElementByTagName()",
+      "Op2": "getElementById()",
+      "Op3": "querySelectorAll()",
+      "Op4": "querySelectorById()",
+      "Ans": "getElementById()"
+    }
+  ]
+}
