@@ -47,7 +47,7 @@ let handleData = (e) => {
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("Login successful"); 
+    alert("Sign Up successful"); 
     window.location.href = "/Final_Exam_2/pages/login.html";
 };
 
