@@ -33,7 +33,9 @@ const handleProduct = async (e) => {
     } else {
     }
 
-    await ProductAPI.post(data);
+    await ProductAPI.post(data); 
+    alert("Product Added successful"); 
+    window.location.href = "/Final_Exam_2/pages/home.html";
 };
 
 document.getElementById('productData').addEventListener('submit', handleProduct);
