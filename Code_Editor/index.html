@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Code Editor with Tab Switch Tracking</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <video id="camera-feed" autoplay></video> <!-- Camera feed element -->
+    <div class="editor-container">
+        <div class="code-editor">
+            <div class="code-section">
+                <h2>HTML</h2>
+                <textarea id="html-code" placeholder="Write your HTML code here"></textarea>
+            </div>
+            <div class="code-section">
+                <h2>CSS</h2>
+                <textarea id="css-code" placeholder="Write your CSS code here"></textarea>
+            </div>
+            <div class="code-section">
+                <h2>JavaScript</h2>
+                <textarea id="js-code" placeholder="Write your JavaScript code here"></textarea>
+            </div>
+        </div>
+        <div class="output">
+            <iframe id="output-frame"></iframe>
+        </div>
+    </div>
+
+    <button onclick="runCode()">Run Code</button>
+    <script src="./index.js"></script>
+</body>
+</html>

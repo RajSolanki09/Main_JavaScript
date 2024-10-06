@@ -1,0 +1,128 @@
+:root {
+    --background-color: #1e1e1e;
+    --button-bg: #314450;
+    --button-hover: #042438;
+    --editor-bg: #252526;
+    --accent-color: #d4d4d4;
+    --textarea-bg: #1e1e1e;
+    --textarea-text: #d4d4d4;
+    --textarea-border: #3c3c3c;
+    --output-bg: #1e1e1e;
+    --button-text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: var(--background-color);
+    overflow: hidden;
+    color: var(--accent-color);
+}
+
+#camera-feed {
+    position: relative;
+    width: 300px;
+    height: auto;
+    border: 3px solid var(--accent-color);
+    border-radius: 15px;
+    z-index: 10;
+    display: none;
+    margin-bottom: 20px;
+}
+
+.editor-container {
+    width: 85vw;
+    height: 75vh;
+    display: flex;
+    background-color: var(--editor-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.code-editor {
+    flex: 1;
+    background-color: var(--editor-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+}
+
+.code-section h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+textarea {
+    width: 100%;
+    height: 160px;
+    background-color: var(--textarea-bg);
+    color: var(--textarea-text);
+    border: 2px solid var(--textarea-border);
+    font-size: 1.2rem;
+    padding: 15px;
+    border-radius: 10px;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.output {
+    background-color: var(--output-bg);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0 15px 15px 0;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+@media (max-width: 768px) {
+    .editor-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .output {
+        height: 200px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    textarea {
+        height: 120px;
+    }
+}
