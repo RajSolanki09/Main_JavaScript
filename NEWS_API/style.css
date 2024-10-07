@@ -1,0 +1,129 @@
+/* General Styles */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Header Styles */
+header {
+    background-color: #2c3e50; /* Dark blue */
+    color: #ecf0f1; /* Light color for text */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+nav ul li:hover {
+    color: #1abc9c; /* Teal color on hover */
+}
+
+/* Main Styles */
+main {
+    padding: 20px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #e67e22; /* Orange color */
+}
+
+/* News Container Styles */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Article Styles */
+.article {
+    background: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.article img.article-image {
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.article h2 {
+    font-size: 1.6em;
+    margin: 10px 15px;
+    color: #34495e; /* Darker color for title */
+}
+
+.article p {
+    margin: 0 15px 10px;
+    color: #7f8c8d; /* Grey color for description */
+}
+
+.read-more {
+    display: block;
+    margin: 10px 15px;
+    padding: 10px;
+    background-color: #1abc9c; /* Teal button */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.read-more:hover {
+    background-color: #16a085; /* Darker teal */
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50; /* Dark blue */
+    color: #ecf0f1; /* Light color for text */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
